@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function CartFooterOverview() {
   return (
     <div>
@@ -5,7 +7,7 @@ function CartFooterOverview() {
         <span>3 pizzas</span>
         <span>$19.97</span>
       </p>
-      <a href="#">Open cart &rarr;</a>
+      <Link to="/cart">Open cart &rarr;</Link>
     </div>
   );
 }
