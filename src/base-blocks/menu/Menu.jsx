@@ -1,14 +1,18 @@
 import { useLoaderData } from "react-router-dom";
 import { getMenu } from "../../services/apiFakePizzaMenu";
 
+import MenuItem from "./MenuItem";
+
 function Menu() {
   const menu = useLoaderData();
-  console.log(menu);
+  // console.log(menu);
 
   return (
-    <div>
-      <h1>PizzaHub Menu</h1>
-    </div>
+    <ul>
+      {menu.map((pizza) => (
+        <MenuItem pizzaObj={pizza} key={pizza.id} />
+      ))}
+    </ul>
   );
 }
 
