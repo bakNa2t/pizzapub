@@ -1,6 +1,7 @@
 // import { useState } from "react";
 
-import { Form } from "react-router-dom";
+import { Form, redirect } from "react-router-dom";
+import { createOrder } from "../../services/apiFakePizzaMenu";
 
 // https://uibakery.io/regex-library/phone-number
 // const isValidPhone = (str) =>
@@ -32,7 +33,7 @@ const fakeCart = [
   },
 ];
 
-function CreateOrder() {
+function OrderCreating() {
   // const [withPriority, setWithPriority] = useState(false);
   const cart = fakeCart;
 
@@ -90,9 +91,9 @@ export async function action({ request }) {
     priority: data.priority === "on",
   };
 
-  console.log(order);
+  const newOrder = await createOrder(order);
 
-  return null;
+  return redirect(`/order/${newOrder.id}`);
 }
 
-export default CreateOrder;
+export default OrderCreating;
