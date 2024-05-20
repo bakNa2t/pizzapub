@@ -1,4 +1,8 @@
-* {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,7 +13,7 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #f7f7f7;
   color: #444;
-}
+} */
 
 .layout {
   display: grid;
