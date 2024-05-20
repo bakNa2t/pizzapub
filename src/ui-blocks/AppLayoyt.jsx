@@ -13,7 +13,6 @@ function AppLayoyt() {
       {isLoading && <Loader />}
       <Header />
       <main>
-        <h1>Content of PizzaPub</h1>
         <Outlet />
       </main>
       <CartFooterOverview />
