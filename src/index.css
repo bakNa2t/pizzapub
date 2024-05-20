@@ -15,13 +15,13 @@ body {
   color: #444;
 } */
 
-.layout {
+/* .layout {
   display: grid;
   grid-template-rows: auto 1fr auto;
   gap: 32px;
   padding: 2rem 6rem;
   height: 100dvh;
-}
+} */
 
 .loader {
   width: 15px;
