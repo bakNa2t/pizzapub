@@ -5,7 +5,7 @@ import UserName from "../base-blocks/user/UserName";
 
 function Header() {
   return (
-    <header className="border-b border-slate-500 bg-purple-500 px-6 py-3 uppercase sm:px-10">
+    <header className="flex items-center justify-between border-b border-slate-500 bg-purple-500 px-6 py-3 uppercase sm:px-10">
       <Link to="/" className="tracking-widest">
         PizzaPub
       </Link>
