@@ -1,3 +1,4 @@
+import Button from "../../ui-blocks/Button";
 import { formatCurrency } from "../../utils/utilsFunctions";
 
 import PropTypes from "prop-types";
@@ -11,13 +12,26 @@ function MenuItem({ pizzaObj }) {
   console.log(id);
 
   return (
-    <li>
-      <img src={imageUrl} alt={name} />
-      <div>
-        <p>{name}</p>
-        <p>{ingredients.join(", ")}</p>
-        <div>
-          {!soldOut ? <p>{formatCurrency(unitPrice)}</p> : <p>Sold out</p>}
+    <li className="flex gap-5 py-4">
+      <img
+        src={imageUrl}
+        alt={name}
+        className={`h-24 ${soldOut ? "opacity-60 grayscale" : ""}`}
+      />
+      <div className="flex grow flex-col">
+        <p className="font-medium">{name}</p>
+        <p className="text-sm capitalize italic text-slate-500">
+          {ingredients.join(", ")}
+        </p>
+        <div className="mt-auto flex items-center justify-between">
+          {!soldOut ? (
+            <p className="text-sm font-medium">{formatCurrency(unitPrice)}</p>
+          ) : (
+            <p className="text-sm font-medium uppercase text-slate-400">
+              Sold out
+            </p>
+          )}
+          <Button>Add to cart</Button>
         </div>
       </div>
     </li>
