@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .input {
+    @apply w-full rounded-full border border-slate-400 px-4 py-2 text-sm outline-none transition-all duration-300 focus:outline-none focus:ring focus:ring-purple-400 focus:ring-opacity-50 md:px-8 md:py-3;
+  }
+}
+
 /* * {
   margin: 0;
   padding: 0;
