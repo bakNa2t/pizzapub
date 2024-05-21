@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ButtonLink from "../../ui-blocks/ButtonLink";
 
 const fakeCart = [
   {
@@ -30,12 +31,7 @@ function Cart() {
 
   return (
     <div>
-      <Link
-        to="/menu"
-        className="my-4 inline-block rounded-full px-2 py-1 text-sm text-indigo-400 transition-all duration-300 hover:bg-slate-300 hover:text-indigo-600 disabled:cursor-not-allowed"
-      >
-        &larr; Back to menu
-      </Link>
+      <ButtonLink to="/menu">&larr; Back to menu</ButtonLink>
 
       <h2>Your cart, %NAME%</h2>
 
