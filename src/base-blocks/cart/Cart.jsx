@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import ButtonLink from "../../ui-blocks/ButtonLink";
+import Button from "../../ui-blocks/Button";
 
 const fakeCart = [
   {
@@ -36,7 +37,7 @@ function Cart() {
       <h2>Your cart, %NAME%</h2>
 
       <div>
-        <Link to="/order/new">Order pizzas</Link>
+        <Button to="/order/new">Order pizzas</Button>
         <button>Clear cart</button>
       </div>
     </div>
