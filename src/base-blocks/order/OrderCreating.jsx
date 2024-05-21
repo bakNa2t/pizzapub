@@ -72,6 +72,7 @@ function OrderCreating() {
 
         <div>
           <input
+            className="focus:ring-rounded-full h-6 w-6 accent-purple-400 outline-none focus:outline-none focus:ring focus:ring-purple-400 focus:ring-offset-2"
             type="checkbox"
             name="priority"
             id="priority"
