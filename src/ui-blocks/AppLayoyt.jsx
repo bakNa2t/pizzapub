@@ -13,7 +13,7 @@ function AppLayoyt() {
       {isLoading && <Loader />}
       <Header />
       <main className="overflow-y-scroll">
-        <div className="mx-auto max-w-[40rem]">
+        <div className="mx-auto max-w-[40rem] md:flex md:flex-col md:items-center md:justify-center">
           <Outlet />
         </div>
       </main>

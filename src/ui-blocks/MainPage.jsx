@@ -2,7 +2,7 @@ import UserCreating from "../base-blocks/user/UserCreating";
 
 function MainPage() {
   return (
-    <div className="my-12 px-5 text-center sm:my-16">
+    <div className="my-20 px-5 text-center sm:my-40">
       <h1 className=" text-center text-2xl font-semibold text-slate-700 md:text-4xl">
         Welcome to PizzaPub
       </h1>

@@ -8,8 +8,7 @@ function MenuItem({ pizzaObj }) {
     pizzaObj: PropTypes.object.isRequired,
   };
 
-  const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizzaObj;
-  console.log(id);
+  const { /*id,*/ name, unitPrice, ingredients, soldOut, imageUrl } = pizzaObj;
 
   return (
     <li className="flex gap-5 py-4">
