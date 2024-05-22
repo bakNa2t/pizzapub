@@ -18,6 +18,8 @@ function Button({ children, disabled, to, type }) {
   const styles = {
     primary: base + " px-4 py-2 md:px-6 md:py-3",
     small: base + " text-xs px-3 py-2 md:px-4 md:py-2",
+    secondary:
+      "inline-block rounded-full border-2 border-slate-400 px-4 py-1.5 font-semibold uppercase tracking-wide text-slate-400 transition-all duration-300  hover:bg-slate-400 hover:text-slate-800 focus::bg-slate-400 focus:outline-none focus:text-slate-800 focus:ring focus:ring-slate-400 focus:ring-offset-2 md:px-6 md:py-2.5",
   };
 
   if (to)
