@@ -13,12 +13,13 @@ function OrderItem({ item, isLoadingIngredients, ingredients }) {
   console.log(ingredients, isLoadingIngredients);
 
   return (
-    <li>
-      <div>
+    <li className="py-3">
+      <div className="flex items-center justify-between text-sm ">
         <p>
-          <span>{quantity}&times;</span> {name}
+          <span className="space-x-1 font-semibold">{quantity} &times;</span>{" "}
+          <span className="rounded-full bg-slate-300 px-3 py-1">{name}</span>
         </p>
-        <p>{formatCurrency(totalPrice)}</p>
+        <p className="font-semibold">{formatCurrency(totalPrice)}</p>
       </div>
     </li>
   );
