@@ -9,11 +9,11 @@ function AppLayoyt() {
   const isLoading = navigation.state === "loading";
 
   return (
-    <div className="h-screen_dyn grid grid-rows-[auto_1fr_auto]">
+    <div className="grid h-screen_dyn grid-rows-[auto_1fr_auto]">
       {isLoading && <Loader />}
       <Header />
       <main className="overflow-y-scroll">
-        <div className="mx-auto max-w-xl">
+        <div className="mx-auto max-w-[40rem]">
           <Outlet />
         </div>
       </main>
