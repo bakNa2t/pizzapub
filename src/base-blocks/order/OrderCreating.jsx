@@ -42,31 +42,42 @@ function OrderCreating() {
   const cart = fakeCart;
 
   return (
-    <div>
-      <h2>It&apos;s time to order? Let&apos;s go!</h2>
+    <div className="px-4 py-6">
+      <h2 className="mb-6 text-xl font-semibold">
+        It&apos;s time to order? Let&apos;s go!
+      </h2>
 
       <Form method="POST">
-        <div>
-          <label>First Name</label>
-          <input className="input" type="text" name="customer" required />
+        <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-center">
+          <label className="sm:basis-32">First Name</label>
+          <input className="input grow" type="text" name="customer" required />
         </div>
 
-        <div>
-          <label>Phone number</label>
-          <div>
-            <input className="input" type="tel" name="phone" required />
-            {formErrors?.phone && <p>{formErrors.phone}</p>}
+        <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-center">
+          <label className="sm:basis-32">Phone number</label>
+          <div className="grow">
+            <input className="input w-full" type="tel" name="phone" required />
+            {formErrors?.phone && (
+              <p className="text-red-80 mt-2 w-fit rounded-full bg-red-200 p-2 text-center text-xs">
+                {formErrors.phone}
+              </p>
+            )}
           </div>
         </div>
 
-        <div>
-          <label>Address</label>
-          <div>
-            <input type="text" name="address" required className="input" />
+        <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-center">
+          <label className="sm:basis-32">Address</label>
+          <div className="grow">
+            <input
+              type="text"
+              name="address"
+              required
+              className="input w-full"
+            />
           </div>
         </div>
 
-        <div>
+        <div className="mb-10 flex items-center gap-4">
           <input
             className="focus:ring-rounded-full h-4 w-4 accent-purple-400 outline-none focus:outline-none focus:ring focus:ring-purple-400 focus:ring-offset-2"
             type="checkbox"
@@ -75,7 +86,9 @@ function OrderCreating() {
             // value={withPriority}
             // onChange={(e) => setWithPriority(e.target.checked)}
           />
-          <label htmlFor="priority">Want to yo give your order priority?</label>
+          <label htmlFor="priority" className="font-medium">
+            Want to yo give your order priority?
+          </label>
         </div>
 
         <div>
