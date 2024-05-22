@@ -8,6 +8,8 @@ import {
   formatDate,
 } from "../../utils/utilsFunctions";
 
+import OrderItem from "./OrderItem";
+
 // const order = {
 //   id: "ABCDEF",
 //   customer: "Consumer",
@@ -53,12 +55,13 @@ function Order() {
     priorityPrice,
     orderPrice,
     estimatedDelivery,
-    /*cart,*/
+    cart,
   } = order;
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
   return (
     <div className="space-y-6 px-8 py-6">
+      {/* Order's staus and priority*/}
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-xl font-semibold">Status # {id}</h2>
 
@@ -74,6 +77,7 @@ function Order() {
         </div>
       </div>
 
+      {/* Estimated delivery time*/}
       <div className="flex flex-wrap items-center justify-between gap-2 bg-slate-300 p-4">
         <p className="font-semibold">
           {deliveryIn >= 0
@@ -85,6 +89,13 @@ function Order() {
         </p>
       </div>
 
+      <ul>
+        {cart.map((item) => (
+          <OrderItem item={item} key={item.id} />
+        ))}
+      </ul>
+
+      {/* Order's price */}
       <div className="space-y-2 bg-slate-300 p-4">
         <p className="text-sm font-semibold text-slate-600">
           Price pizza: {formatCurrency(orderPrice)}
