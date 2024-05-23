@@ -1,4 +1,6 @@
 // import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import ButtonLink from "../../ui-blocks/ButtonLink";
 import Button from "../../ui-blocks/Button";
 import CartItem from "../cart/CartItem";
@@ -28,14 +30,14 @@ const fakeCart = [
 ];
 
 function Cart() {
+  const username = useSelector((state) => state.user.username);
   const cart = fakeCart;
-  console.log(cart);
 
   return (
     <div className="px-6 py-4">
       <ButtonLink to="/menu">&larr; Back to menu</ButtonLink>
 
-      <h2 className="mt-6 text-xl font-semibold">Your cart, %NAME%</h2>
+      <h2 className="mt-6 text-xl font-semibold">Your cart, {username}</h2>
 
       <ul className="mt-4 divide-y divide-slate-300 border-b border-slate-300">
         {cart.map((item) => (
