@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function Button({ children, disabled, to, type }) {
+function Button({ children, disabled, to, type, onClick }) {
   Button.propTypes = {
     children: PropTypes.node,
     disabled: PropTypes.bool,
     to: PropTypes.string,
     type: PropTypes.string,
+    onClick: PropTypes.func,
   };
 
   const base =
@@ -24,6 +25,13 @@ function Button({ children, disabled, to, type }) {
       <Link to={to} className={styles[type]}>
         {children}
       </Link>
+    );
+
+  if (onClick)
+    return (
+      <button disabled={disabled} className={styles[type]} onClick={onClick}>
+        {children}
+      </button>
     );
 
   return (
