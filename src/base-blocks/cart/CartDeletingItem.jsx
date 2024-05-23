@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 
 function CartDeletingItem({ pizzaId }) {
   CartDeletingItem.propTypes = {
-    pizzaId: PropTypes.string.isRequired,
+    pizzaId: PropTypes.number.isRequired,
   };
 
   const dispatch = useDispatch();
