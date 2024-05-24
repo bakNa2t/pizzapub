@@ -6,7 +6,7 @@ function MainPage() {
   const username = useSelector((state) => state.user.username);
 
   return (
-    <div className="my-20 px-5 text-center sm:my-40 lg:my-60 xl:my-80 2xl:my-[28rem]">
+    <div className="xl:my-66 my-20 px-5 text-center sm:my-40 lg:my-56 2xl:my-[28rem]">
       <h1 className=" text-center text-2xl font-semibold text-slate-700 md:text-4xl">
         Welcome to PizzaPub
       </h1>
