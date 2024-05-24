@@ -68,7 +68,6 @@ function Order() {
     },
     [fetcher],
   );
-  console.log(fetcher.data);
 
   return (
     <div className="space-y-6 px-8 py-6">
@@ -102,7 +101,15 @@ function Order() {
 
       <ul className="divide-y divide-slate-300 border-b border-t border-slate-300">
         {cart.map((item) => (
-          <OrderItem item={item} key={item.pizzaId} />
+          <OrderItem
+            item={item}
+            key={item.pizzaId}
+            isLoadingIngredients={fetcher.state === "loading"}
+            ingredients={
+              fetcher?.data?.find((i) => i.id === item.pizzaId)?.ingredients ??
+              []
+            }
+          />
         ))}
       </ul>
 
