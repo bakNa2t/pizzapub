@@ -5,6 +5,7 @@ import { addItem, getCurrentQuantityById } from "../cart/cartSlice";
 
 import Button from "../../ui-blocks/Button";
 import CartDeletingItem from "../cart/CartDeletingItem";
+import CartItemUpdatingQuantity from "../cart/CartItemUpdatingQuantity";
 
 import PropTypes from "prop-types";
 
@@ -51,7 +52,15 @@ function MenuItem({ pizzaObj }) {
             </p>
           )}
 
-          {isInCart && <CartDeletingItem pizzaId={id} />}
+          {isInCart && (
+            <div className="flex items-center gap-3 sm:gap-7">
+              <CartItemUpdatingQuantity
+                pizzaId={id}
+                currentQuantity={currentQuantity}
+              />
+              <CartDeletingItem pizzaId={id} />
+            </div>
+          )}
 
           {!soldOut && !isInCart && (
             <Button type="small" onClick={handleAddToCart}>
