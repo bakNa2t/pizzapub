@@ -1,13 +1,13 @@
-// import { useState } from "react";
-
+import { useState } from "react";
 import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
 import { createOrder } from "../../services/apiFakePizzaMenu";
 import { useSelector } from "react-redux";
-import { clearItem, getCart } from "../cart/cartSlice";
+import { clearItem, getCart, getTotalCartPrice } from "../cart/cartSlice";
 import store from "../../store";
 
 import Button from "../../ui-blocks/Button";
 import CartEmpty from "../cart/CartEmpty";
+import { formatCurrency } from "../../utils/utilsFunctions";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -40,12 +40,15 @@ const isValidPhone = (str) =>
 // ];
 
 function OrderCreating() {
-  // const [withPriority, setWithPriority] = useState(false);
+  const [addPriority, setAddPriority] = useState(false);
   const navigation = useNavigation();
   const username = useSelector((state) => state.user.username);
   const isSubmitting = navigation.state === "submitting";
   const formErrors = useActionData();
   const cart = useSelector(getCart);
+  const totalCartPrice = useSelector(getTotalCartPrice);
+  const priorityPrice = addPriority ? totalCartPrice * 0.2 : 0;
+  const totalPrice = totalCartPrice + priorityPrice;
 
   if (!cart.length) return <CartEmpty />;
 
@@ -97,8 +100,8 @@ function OrderCreating() {
             type="checkbox"
             name="priority"
             id="priority"
-            // value={withPriority}
-            // onChange={(e) => setWithPriority(e.target.checked)}
+            value={addPriority}
+            onChange={(e) => setAddPriority(e.target.checked)}
           />
           <label htmlFor="priority" className="font-medium">
             Want to yo give your order priority?
@@ -108,7 +111,9 @@ function OrderCreating() {
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
           <Button type="primary" disabled={isSubmitting}>
-            {isSubmitting ? "Filling order..." : "Order now"}
+            {isSubmitting
+              ? "Filling order..."
+              : `Order now from ${formatCurrency(totalPrice)}`}
           </Button>
         </div>
       </Form>
