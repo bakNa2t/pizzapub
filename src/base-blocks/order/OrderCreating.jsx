@@ -44,7 +44,14 @@ const isValidPhone = (str) =>
 function OrderCreating() {
   const [addPriority, setAddPriority] = useState(false);
   const navigation = useNavigation();
-  const username = useSelector((state) => state.user.username);
+  const {
+    username,
+    status: addressStatus,
+    position,
+    address,
+  } = useSelector((state) => state.user);
+  const isLoadingAddress = addressStatus === "loading";
+
   const isSubmitting = navigation.state === "submitting";
   const formErrors = useActionData();
   const cart = useSelector(getCart);
@@ -61,9 +68,8 @@ function OrderCreating() {
         It&apos;s time to order? Let&apos;s go!
       </h2>
 
-      <button onClick={() => dispatch(fetchAddress())}>GET POS</button>
-
       <Form method="POST">
+        {/* First name INPUT */}
         <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-center">
           <label className="sm:basis-32">First Name</label>
           <input
@@ -75,6 +81,7 @@ function OrderCreating() {
           />
         </div>
 
+        {/* Phone number INPUT */}
         <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-center">
           <label className="sm:basis-32">Phone number</label>
           <div className="grow">
@@ -87,18 +94,36 @@ function OrderCreating() {
           </div>
         </div>
 
-        <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-center">
+        {/* Address INPUT */}
+        <div className="relative mb-4 flex flex-col gap-1 sm:flex-row sm:items-center">
           <label className="sm:basis-32">Address</label>
           <div className="grow">
             <input
               type="text"
               name="address"
+              disabled={isLoadingAddress}
+              defaultValue={address}
               required
               className="input w-full"
             />
           </div>
+          {!position.latitude && !position.longitude && (
+            <span className="z-100 absolute right-2">
+              <Button
+                type="small"
+                disabled={isLoadingAddress}
+                onClick={(e) => {
+                  e.preventDefault();
+                  dispatch(fetchAddress());
+                }}
+              >
+                Get address
+              </Button>
+            </span>
+          )}
         </div>
 
+        {/* Add priority checkbox */}
         <div className="mb-10 flex items-center gap-4">
           <input
             className="focus:ring-rounded-full h-4 w-4 accent-purple-400 outline-none focus:outline-none focus:ring focus:ring-purple-400 focus:ring-offset-2"
@@ -113,9 +138,10 @@ function OrderCreating() {
           </label>
         </div>
 
+        {/* Order button */}
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <Button type="primary" disabled={isSubmitting}>
+          <Button type="primary" disabled={isSubmitting || isLoadingAddress}>
             {isSubmitting
               ? "Filling order..."
               : `Order now from ${formatCurrency(totalPrice)}`}
