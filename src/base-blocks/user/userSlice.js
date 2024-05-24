@@ -59,6 +59,8 @@ const userSlice = createSlice({
       .addCase(fetchAddress.rejected, (state, action) => {
         state.error = action.error.message;
         state.status = "error";
+        state.error =
+          "There was a problem with the geolocation service. Please try to fill this field.";
       }),
 });
 

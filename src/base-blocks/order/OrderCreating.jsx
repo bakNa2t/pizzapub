@@ -49,6 +49,7 @@ function OrderCreating() {
     status: addressStatus,
     position,
     address,
+    error: addressError,
   } = useSelector((state) => state.user);
   const isLoadingAddress = addressStatus === "loading";
 
@@ -99,16 +100,21 @@ function OrderCreating() {
           <label className="sm:basis-32">Address</label>
           <div className="grow">
             <input
+              className="input w-full"
               type="text"
               name="address"
               disabled={isLoadingAddress}
               defaultValue={address}
               required
-              className="input w-full"
             />
+            {addressStatus === "error" && (
+              <p className="text-red-80 mt-2 w-fit rounded-full bg-red-200 p-2 text-center text-xs">
+                {addressError}
+              </p>
+            )}
           </div>
           {!position.latitude && !position.longitude && (
-            <span className="z-100 absolute right-2">
+            <span className="z-100 absolute right-1 top-8 sm:right-2 sm:top-2">
               <Button
                 type="small"
                 disabled={isLoadingAddress}
