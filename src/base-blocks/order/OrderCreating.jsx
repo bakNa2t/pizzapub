@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
-import { createOrder } from "../../services/apiFakePizzaMenu";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { clearItem, getCart, getTotalCartPrice } from "../cart/cartSlice";
-import store from "../../store";
+import { fetchAddress } from "../user/userSlice";
+import { createOrder } from "../../services/apiFakePizzaMenu";
+import { formatCurrency } from "../../utils/utilsFunctions";
 
 import Button from "../../ui-blocks/Button";
 import CartEmpty from "../cart/CartEmpty";
-import { formatCurrency } from "../../utils/utilsFunctions";
+
+import store from "../../store";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -49,6 +51,7 @@ function OrderCreating() {
   const totalCartPrice = useSelector(getTotalCartPrice);
   const priorityPrice = addPriority ? totalCartPrice * 0.2 : 0;
   const totalPrice = totalCartPrice + priorityPrice;
+  const dispatch = useDispatch();
 
   if (!cart.length) return <CartEmpty />;
 
@@ -57,6 +60,8 @@ function OrderCreating() {
       <h2 className="mb-6 text-xl font-semibold">
         It&apos;s time to order? Let&apos;s go!
       </h2>
+
+      <button onClick={() => dispatch(fetchAddress())}>GET POS</button>
 
       <Form method="POST">
         <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-center">
@@ -128,7 +133,7 @@ export async function action({ request }) {
   const order = {
     ...data,
     cart: JSON.parse(data.cart),
-    priority: data.priority === "on",
+    priority: data.priority === "true",
   };
 
   const errors = {};
