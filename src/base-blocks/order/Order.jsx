@@ -1,6 +1,6 @@
 // Test ID: IIDSAT
 
-import { useLoaderData } from "react-router-dom";
+import { useFetcher, useLoaderData } from "react-router-dom";
 import { getOrder } from "../../services/apiFakePizzaMenu";
 import {
   calcMinutesLeft,
@@ -9,6 +9,7 @@ import {
 } from "../../utils/utilsFunctions";
 
 import OrderItem from "./OrderItem";
+import { useEffect } from "react";
 
 // const order = {
 //   id: "ABCDEF",
@@ -47,6 +48,7 @@ import OrderItem from "./OrderItem";
 
 function Order() {
   const order = useLoaderData();
+  const fetcher = useFetcher();
   // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
   const {
     id,
@@ -57,9 +59,16 @@ function Order() {
     estimatedDelivery,
     cart,
   } = order;
-  console.log(cart);
 
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
+
+  useEffect(
+    function () {
+      if (!fetcher.data && fetcher.state === "idle") fetcher.load("/menu");
+    },
+    [fetcher],
+  );
+  console.log(fetcher.data);
 
   return (
     <div className="space-y-6 px-8 py-6">
