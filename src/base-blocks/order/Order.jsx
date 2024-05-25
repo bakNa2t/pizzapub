@@ -106,8 +106,7 @@ function Order() {
             key={item.pizzaId}
             isLoadingIngredients={fetcher.state === "loading"}
             ingredients={
-              fetcher?.data?.find((i) => i.id === item.pizzaId)?.ingredients ??
-              []
+              fetcher?.data?.find((i) => i.id === item.pizzaId).ingredients
             }
           />
         ))}
