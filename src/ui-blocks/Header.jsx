@@ -5,10 +5,10 @@ import UserName from "../base-blocks/user/UserName";
 
 function Header() {
   return (
-    <header className="flex items-center justify-between border-b border-slate-500 bg-purple-400 px-6 py-3 uppercase sm:px-10">
+    <header className="flex items-center justify-between border-b border-slate-500 bg-purple-400 px-6 py-3 sm:px-10">
       <Link
         to="/"
-        className="font-ubuntu text-xl font-bold tracking-widest text-purple-950"
+        className="font-ubuntu text-xl font-bold uppercase tracking-widest text-purple-950"
       >
         PizzaPub
       </Link>
