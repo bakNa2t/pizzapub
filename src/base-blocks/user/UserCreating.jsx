@@ -5,7 +5,7 @@ import { updateName } from "./userSlice";
 
 import Button from "../../ui-blocks/Button";
 
-function CreateUser() {
+function UserCreating() {
   const [username, setUsername] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -41,4 +41,4 @@ function CreateUser() {
   );
 }
 
-export default CreateUser;
+export default UserCreating;
