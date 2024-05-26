@@ -16,10 +16,10 @@ function CartFooterOverview() {
         <span>{totalCartQuantity} pizzas</span>
         <span>{formatCurrency(totalCartPrice)}</span>
       </p>
-      <Link to="/cart">
-        Open cart
-        <TiShoppingCart />
-      </Link>
+      <p className="flex items-center space-x-1 md:space-x-3">
+        <Link to="/cart">Open cart</Link>
+        <TiShoppingCart className="text-xl text-purple-400 md:text-2xl" />
+      </p>
     </div>
   );
 }
