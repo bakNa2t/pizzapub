@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getTotalCartPrice, getTotalCartQuantity } from "./cartSlice";
 import { formatCurrency } from "../../utils/utilsFunctions";
+import { TiShoppingCart } from "react-icons/ti";
 
 function CartFooterOverview() {
   const totalCartQuantity = useSelector(getTotalCartQuantity);
@@ -15,7 +16,10 @@ function CartFooterOverview() {
         <span>{totalCartQuantity} pizzas</span>
         <span>{formatCurrency(totalCartPrice)}</span>
       </p>
-      <Link to="/cart">Open cart &rarr;</Link>
+      <Link to="/cart">
+        Open cart
+        <TiShoppingCart />
+      </Link>
     </div>
   );
 }
