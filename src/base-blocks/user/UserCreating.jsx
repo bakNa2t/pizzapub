@@ -20,16 +20,16 @@ function UserCreating() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <p className="mb-5 text-sm text-slate-700 md:text-base">
+      <p className="mb-5 text-sm font-semibold text-slate-700 md:text-base">
         Hi there! Please start by telling us your name:
       </p>
 
       <input
         type="text"
-        placeholder="Your full name"
+        placeholder="Enter your name..."
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        className="input mb-5 w-64"
+        className="input mb-5 w-64 text-sm placeholder:italic placeholder:text-purple-300 md:placeholder:text-base"
       />
 
       {username !== "" && (
