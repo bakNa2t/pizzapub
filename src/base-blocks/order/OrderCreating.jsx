@@ -132,7 +132,7 @@ function OrderCreating() {
         {/* Add priority checkbox */}
         <div className="mb-10 flex items-center gap-4">
           <input
-            className="focus:ring-rounded-full h-4 w-4 accent-purple-400 outline-none focus:outline-none focus:ring focus:ring-purple-400 focus:ring-offset-2"
+            className="focus:ring-rounded-full h-4 w-4 accent-purple-400 outline-none focus:outline-none focus:ring focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-slate-200"
             type="checkbox"
             name="priority"
             id="priority"

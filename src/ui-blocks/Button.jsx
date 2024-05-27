@@ -11,7 +11,7 @@ function Button({ children, disabled, to, type, onClick }) {
   };
 
   const base =
-    "inline-block text-sm rounded-full bg-purple-400 font-semibold uppercase tracking-wide text-slate-900 transition-all duration-300 hover:bg-purple-300 focus:outline-none focus:ring focus:ring-purple-300 focus:ring-offset-2";
+    "inline-block text-sm rounded-full bg-purple-400 font-semibold uppercase tracking-wide text-slate-900 transition-all duration-300 hover:bg-purple-300 focus:outline-none focus:ring focus:ring-purple-300 focus:ring-offset-2 ring-offset-slate-200";
 
   const styles = {
     primary: base + " px-4 py-3 md:px-6 md:py-4 md:text-base",
