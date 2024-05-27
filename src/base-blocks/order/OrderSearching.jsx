@@ -16,10 +16,10 @@ function OrderSearching() {
   return (
     <form onSubmit={handleSubmit}>
       <input
-        placeholder="Search by order #"
+        placeholder="Enter your order #..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="w-36 rounded-full bg-purple-200 px-4 py-2 text-sm outline-none transition-all duration-300 placeholder:text-slate-600 focus:outline-none focus:ring focus:ring-purple-600 focus:ring-opacity-50 sm:w-64 sm:focus:w-72"
+        className="w-40 rounded-full bg-purple-200 px-4 py-2 text-xs outline-none transition-all duration-300 placeholder:italic placeholder:text-purple-600 focus:outline-none focus:ring focus:ring-purple-600 focus:ring-opacity-50 sm:w-64 sm:text-sm sm:focus:w-72"
       />
     </form>
   );
