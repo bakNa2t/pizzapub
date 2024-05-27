@@ -14,7 +14,7 @@ function CartItemUpdatingQuantity({ pizzaId, currentQuantity }) {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex items-center gap-3 md:gap-4">
+    <div className="flex items-center gap-2 md:gap-3">
       <Button
         type="round"
         onClick={() => {
@@ -23,7 +23,9 @@ function CartItemUpdatingQuantity({ pizzaId, currentQuantity }) {
       >
         -
       </Button>
-      <span className="text-sm font-medium">{currentQuantity}</span>
+      <span className="text-sm font-medium md:text-base">
+        {currentQuantity}
+      </span>
       <Button
         type="round"
         onClick={() => {
