@@ -5,6 +5,7 @@ import AppLayoyt from "./ui-blocks/AppLayoyt";
 import Menu, { loader as menuLoader } from "./base-blocks/menu/Menu";
 import Cart from "./base-blocks/cart/Cart";
 import Order, { loader as orderLoader } from "./base-blocks/order/Order";
+import { action as updateOrderAction } from "./base-blocks/order/OrderUpdating";
 import OrderCreating, {
   action as orderCreatingAction,
 } from "./base-blocks/order/OrderCreating";
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
         element: <Order />,
         loader: orderLoader,
         errorElement: <Error />,
+        action: updateOrderAction,
       },
     ],
   },
