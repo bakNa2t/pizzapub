@@ -10,6 +10,7 @@ import {
 
 import OrderItem from "./OrderItem";
 import { useEffect } from "react";
+import OrderUpdating from "./OrderUpdating";
 
 // const order = {
 //   id: "ABCDEF",
@@ -127,6 +128,9 @@ function Order() {
           To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}
         </p>
       </div>
+
+      {/* Priority updating */}
+      {!priority && <OrderUpdating order={order} />}
     </div>
   );
 }
