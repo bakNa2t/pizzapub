@@ -6,6 +6,7 @@ import ButtonLink from "../../ui-blocks/ButtonLink";
 import Button from "../../ui-blocks/Button";
 import CartItem from "../cart/CartItem";
 import CartEmpty from "../cart/CartEmpty";
+import { TiShoppingCart } from "react-icons/ti";
 
 // const fakeCart = [
 //   {
@@ -58,12 +59,14 @@ function Cart() {
         ))}
       </ul>
 
-      <div className="mt-6 space-x-3">
+      <div className="mt-6 space-x-3 md:flex md:items-center md:justify-between">
         <Button to="/order/new" type="primary">
           Order pizzas
         </Button>
         <Button type="secondary" onClick={clearCartItems}>
-          Clear cart
+          <div className="flex items-center gap-2">
+            Clear <TiShoppingCart className="h-5 w-5" />
+          </div>
         </Button>
       </div>
     </div>
