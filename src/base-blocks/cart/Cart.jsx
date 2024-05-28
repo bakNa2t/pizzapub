@@ -48,7 +48,9 @@ function Cart() {
     <div className="px-6 py-4">
       <ButtonLink to="/menu">&larr; Back to menu</ButtonLink>
 
-      <h2 className="mt-6 text-xl font-semibold">Your cart, {username}</h2>
+      <h2 className="mt-6 text-xl font-semibold">
+        Your cart, <span className="italic text-purple-800">{username}</span>
+      </h2>
 
       <ul className="mt-4 divide-y divide-slate-300 border-b border-slate-300">
         {cart.map((item) => (
