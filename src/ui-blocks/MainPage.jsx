@@ -78,7 +78,10 @@ function MainPage() {
         <UserCreating />
       ) : (
         <Button to="/menu" type="primary">
-          Back to menu, {username}
+          Back to menu,{" "}
+          <span className="px-2 py-1 font-bold italic text-purple-950">
+            {username}
+          </span>
         </Button>
       )}
     </div>

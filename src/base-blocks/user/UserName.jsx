@@ -7,7 +7,7 @@ function UserName() {
 
   return (
     <div className="text-md hidden font-semibold drop-shadow-sm md:block">
-      Welcome, <span className="uppercase">{username}</span>
+      Welcome, <span className="font-bold uppercase italic">{username}</span>
     </div>
   );
 }
