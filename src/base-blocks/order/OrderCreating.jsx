@@ -6,6 +6,7 @@ import { fetchAddress } from "../user/userSlice";
 import { createOrder } from "../../services/apiFakePizzaMenu";
 import { formatCurrency } from "../../utils/utilsFunctions";
 
+import { GiPositionMarker } from "react-icons/gi";
 import Button from "../../ui-blocks/Button";
 import CartEmpty from "../cart/CartEmpty";
 
@@ -66,7 +67,7 @@ function OrderCreating() {
   return (
     <div className="px-4 py-6">
       <h2 className="mb-6 text-xl font-semibold">
-        It&apos;s time to order? Let&apos;s go!
+        It&apos;s time to order! Let&apos;s go!
       </h2>
 
       <Form method="POST">
@@ -114,16 +115,16 @@ function OrderCreating() {
             )}
           </div>
           {!position.latitude && !position.longitude && (
-            <span className="z-100 absolute right-1 top-8 sm:right-2 sm:top-2">
+            <span className="z-100 absolute right-1 top-[27px] sm:right-[4px] sm:top-[3px]">
               <Button
-                type="small"
+                type="icon"
                 disabled={isLoadingAddress}
                 onClick={(e) => {
                   e.preventDefault();
                   dispatch(fetchAddress());
                 }}
               >
-                Get address
+                <GiPositionMarker className="text-2xl" />
               </Button>
             </span>
           )}
