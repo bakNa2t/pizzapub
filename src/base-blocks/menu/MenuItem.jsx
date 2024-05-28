@@ -8,6 +8,7 @@ import CartDeletingItem from "../cart/CartDeletingItem";
 import CartItemUpdatingQuantity from "../cart/CartItemUpdatingQuantity";
 
 import PropTypes from "prop-types";
+import { TiShoppingCart } from "react-icons/ti";
 
 function MenuItem({ pizzaObj }) {
   MenuItem.propTypes = {
@@ -64,7 +65,10 @@ function MenuItem({ pizzaObj }) {
 
           {!soldOut && !isInCart && (
             <Button type="small" onClick={handleAddToCart}>
-              Add to cart
+              <div className="flex items-center gap-1 md:gap-2">
+                <p>Add to</p>
+                <TiShoppingCart className=" text-lg md:text-xl" />
+              </div>
             </Button>
           )}
         </div>
