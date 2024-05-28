@@ -38,6 +38,12 @@ function Cart() {
 
   if (!cart.length) return <CartEmpty />;
 
+  function clearCartItems() {
+    if (confirm("Are you sure you want to clear the cart?")) {
+      dispatch(clearItem());
+    }
+  }
+
   return (
     <div className="px-6 py-4">
       <ButtonLink to="/menu">&larr; Back to menu</ButtonLink>
@@ -54,7 +60,7 @@ function Cart() {
         <Button to="/order/new" type="primary">
           Order pizzas
         </Button>
-        <Button type="secondary" onClick={() => dispatch(clearItem())}>
+        <Button type="secondary" onClick={clearCartItems}>
           Clear cart
         </Button>
       </div>
