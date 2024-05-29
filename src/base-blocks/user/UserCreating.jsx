@@ -32,7 +32,11 @@ function UserCreating() {
         className="input mb-5 w-64 text-sm placeholder:italic placeholder:text-purple-300 md:placeholder:text-base"
       />
 
-      {username !== "" && (
+      {username === " " && (
+        <p className="text-red-500">Please, enter your name </p>
+      )}
+
+      {username !== "" && username.trim() !== "" && (
         <div>
           <Button type="primary">Start ordering</Button>
         </div>
