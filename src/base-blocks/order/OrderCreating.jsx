@@ -78,7 +78,7 @@ function OrderCreating() {
             className="input grow"
             type="text"
             name="customer"
-            defaultValue={username}
+            defaultValue={username.trim()}
             required
           />
         </div>
