@@ -41,8 +41,8 @@ click here to visit => [_**PizzaPub**_](https://pizzapub.vercel.app/)
 
 <div align="center">
     <p style="width: 500px;">
-        <a href="https://wideglobe.vercel.app/" target="_blank" >
-            <!-- <img alt="WideGlobe Webapp" src ="./public/wg-readme.png" width="600"> -->
+        <a href="https://pizzapub.vercel.app/" target="_blank" >
+            <img alt="PizzaPub React" src ="./public/images/pizzapub-readme.png" width="600">
         </a>
     </p>
 </div>
