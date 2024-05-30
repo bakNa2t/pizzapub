@@ -12,8 +12,14 @@ function CartDeletingItem({ pizzaId }) {
 
   const dispatch = useDispatch();
 
+  function handleDeleteItem() {
+    if (confirm("Are you sure you want to delete this pizza?")) {
+      dispatch(deleteItem(pizzaId));
+    }
+  }
+
   return (
-    <Button type="small" onClick={() => dispatch(deleteItem(pizzaId))}>
+    <Button type="small" onClick={handleDeleteItem}>
       Delete
     </Button>
   );
