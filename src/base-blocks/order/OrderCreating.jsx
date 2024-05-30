@@ -146,7 +146,7 @@ function OrderCreating() {
         </div>
 
         {/* Order button */}
-        <div>
+        <div className="flex justify-between">
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
           <input
             type="hidden"
@@ -161,6 +161,9 @@ function OrderCreating() {
             {isSubmitting
               ? "Filling order..."
               : `Order now from ${formatCurrency(totalPrice)}`}
+          </Button>
+          <Button type="primary" to={"/menu"}>
+            Menu
           </Button>
         </div>
       </Form>
