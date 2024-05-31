@@ -24,7 +24,7 @@ function CartFooterOverview() {
       <Link to="/cart" className="relative flex items-center gap-2 md:gap-4">
         Open cart
         <TiShoppingCart className="h-6 w-6 text-purple-400 md:h-8 md:w-8" />
-        <p className="absolute right-[-6px] top-[-5px] h-4 w-4 rounded-full bg-purple-200 text-center text-[9px] text-slate-800 md:right-[-8px] md:top-[-5px] md:h-4 md:w-4 md:text-xs">
+        <p className="absolute right-[-7px] top-[-6px] h-[14px] w-[14px] rounded-full bg-purple-200 text-center text-[8px] text-slate-800 md:right-[-8px] md:top-[-5px] md:h-4 md:w-4 md:text-xs">
           {totalCartQuantity}
         </p>
       </Link>
