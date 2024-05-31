@@ -8,8 +8,8 @@ function EmptyCart() {
         <TiArrowBackOutline className="h-5 w-5" /> Back to menu
       </ButtonLink>
 
-      <p className="mt-8 font-semibold ">
-        Your cart is still empty. Start adding some pizzas 😥
+      <p className="mt-8 bg-slate-300 px-3 py-1 font-semibold md:px-6 md:py-4">
+        Your cart is still empty 😕. Back to menu to start adding some pizzas 🤗
       </p>
     </div>
   );
