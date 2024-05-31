@@ -67,7 +67,7 @@ function MenuItem({ pizzaObj }) {
             <Button type="small" onClick={handleAddToCart}>
               <div className="flex items-center gap-1 md:gap-2">
                 <p>Add to</p>
-                <TiShoppingCart className=" text-lg md:text-xl" />
+                <TiShoppingCart className="text-xs" />
               </div>
             </Button>
           )}

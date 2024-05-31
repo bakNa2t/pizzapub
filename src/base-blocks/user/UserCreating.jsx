@@ -14,8 +14,11 @@ function UserCreating() {
     e.preventDefault();
 
     if (!username) return;
-    dispatch(updateName(username));
-    navigate("/menu");
+
+    if (username.trim() !== "") {
+      dispatch(updateName(username));
+      navigate("/menu");
+    }
   }
 
   return (
