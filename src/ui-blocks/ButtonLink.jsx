@@ -9,7 +9,7 @@ function ButtonLink({ children, to }) {
 
   const navigate = useNavigate();
   const className =
-    "inline-block border rounded-full px-2 py-1 text-sm text-indigo-400 transition-all duration-300 hover:bg-slate-300 hover:border-indigo-400 hover:text-indigo-600 disabled:cursor-not-allowed";
+    "flex gap-2 w-fit border rounded-full px-2 py-1 text-sm text-indigo-400 transition-all duration-300 hover:bg-slate-300 hover:border-indigo-400 hover:text-indigo-600 disabled:cursor-not-allowed";
 
   if (to === "-1")
     return (

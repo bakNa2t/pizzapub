@@ -36,7 +36,9 @@ function UserCreating() {
       />
 
       {username === " " && (
-        <p className="text-red-500">Please, enter your name </p>
+        <p className="text-red-500">
+          You can&apos;t use spaces in the beginning of your name
+        </p>
       )}
 
       {username !== "" && username.trim() !== "" && (

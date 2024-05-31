@@ -6,7 +6,7 @@ import ButtonLink from "../../ui-blocks/ButtonLink";
 import Button from "../../ui-blocks/Button";
 import CartItem from "../cart/CartItem";
 import CartEmpty from "../cart/CartEmpty";
-import { TiShoppingCart } from "react-icons/ti";
+import { TiArrowBackOutline, TiShoppingCart } from "react-icons/ti";
 
 // const fakeCart = [
 //   {
@@ -47,7 +47,9 @@ function Cart() {
 
   return (
     <div className="px-6 py-4">
-      <ButtonLink to="/menu">&larr; Back to menu</ButtonLink>
+      <ButtonLink to="/menu">
+        <TiArrowBackOutline className="h-5 w-5" /> <span>Back to menu</span>
+      </ButtonLink>
 
       <h2 className="mt-6 text-xl font-semibold">
         Your cart, <span className="italic text-purple-800">{username}</span>
