@@ -4,8 +4,8 @@ function Footer() {
   }
 
   return (
-    <footer>
-      <p>
+    <footer className="absolute bottom-2 left-1/2 -translate-x-1/2 text-slate-500">
+      <p className="text-xs">
         &copy; Copyright {fullYear()}. <strong>PizzaPub</strong> designed by{" "}
         <a
           href="https://github.com/bakna2t"
