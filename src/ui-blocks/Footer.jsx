@@ -13,6 +13,7 @@ function Footer() {
           href="https://github.com/bakna2t"
           target="_blank"
           rel="noopener noreferrer"
+          className={"font-semibold text-purple-600"}
         >
           _&#216;k
         </LinkSide>
