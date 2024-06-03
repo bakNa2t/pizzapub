@@ -15,7 +15,6 @@ function Footer() {
 
   async function menu() {
     const data = await getMenu();
-    console.log(data);
     return data;
   }
 
