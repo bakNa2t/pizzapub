@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { getTotalCartQuantity } from "../base-blocks/cart/cartSlice";
+import { getMenu } from "../services/apiFakePizzaMenu";
 
 import LinkSide from "./LinkSide";
 
@@ -11,6 +12,14 @@ function Footer() {
   }
 
   if (totalCartQuantity) return null;
+
+  async function menu() {
+    const data = await getMenu();
+    console.log(data);
+    return data;
+  }
+
+  if (menu()) return null;
 
   return (
     <footer className="absolute bottom-2 left-1/2 -translate-x-1/2 text-slate-500">
