@@ -17,7 +17,7 @@ function OrderSearching() {
   return (
     <form onSubmit={handleSubmit} className="relative">
       <input
-        placeholder="Enter your order #..."
+        placeholder="Enter order e.g. 2HKXWS"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         className="w-5 rounded-full bg-purple-200 px-4 py-2 pl-8 text-xs outline-none transition-all duration-300 placeholder:italic placeholder:text-transparent focus:w-56 focus:outline-none focus:ring focus:ring-purple-600 focus:ring-opacity-50 focus:placeholder:text-purple-600 sm:w-64 sm:text-sm sm:placeholder:text-purple-600 sm:focus:w-80"
