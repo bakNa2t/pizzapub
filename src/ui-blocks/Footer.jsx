@@ -1,11 +1,13 @@
 import { useSelector } from "react-redux";
 import { getTotalCartQuantity } from "../base-blocks/cart/cartSlice";
-import { getMenu } from "../services/apiFakePizzaMenu";
+// import { getMenu } from "../services/apiFakePizzaMenu";
 
 import LinkSide from "./LinkSide";
+// import { useLoaderData } from "react-router-dom";
 
 function Footer() {
   const totalCartQuantity = useSelector(getTotalCartQuantity);
+  // const menu = useLoaderData();
 
   function fullYear() {
     return new Date().getFullYear();
@@ -13,12 +15,7 @@ function Footer() {
 
   if (totalCartQuantity) return null;
 
-  async function menu() {
-    const data = await getMenu();
-    return data;
-  }
-
-  if (menu()) return null;
+  if (window.location.pathname === "/menu") return null;
 
   return (
     <footer className="absolute bottom-2 left-1/2 -translate-x-1/2 text-slate-500">
