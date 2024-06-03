@@ -25,7 +25,9 @@ function Footer() {
           href="https://github.com/bakna2t"
           target="_blank"
           rel="noopener noreferrer"
-          className={"font-semibold text-purple-600"}
+          className={
+            "inline-block font-semibold text-purple-600 transition-all duration-300 hover:-translate-y-1"
+          }
         >
           _&#216;k
         </LinkSide>
