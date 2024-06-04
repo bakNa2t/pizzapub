@@ -41,7 +41,7 @@ function MenuItem({ pizzaObj }) {
       />
       <div className="flex grow flex-col pt-0.5">
         <p className="font-medium">{name}</p>
-        <p className="text-sm capitalize italic text-slate-500">
+        <p className="text-xs capitalize italic text-slate-500 sm:text-sm">
           {ingredients.join(", ")}
         </p>
         <div className="mt-auto flex items-center justify-between">

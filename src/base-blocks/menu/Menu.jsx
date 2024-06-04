@@ -10,7 +10,7 @@ function Menu() {
 
   return (
     <>
-      <ul className="divide-y divide-slate-300 px-3">
+      <ul className="divide-y divide-slate-300 px-5 sm:px-3">
         {menu.map((pizza) => (
           <MenuItem pizzaObj={pizza} key={pizza.id} />
         ))}
