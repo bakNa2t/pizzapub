@@ -14,13 +14,16 @@ function Button({ children, disabled, to, type, onClick }) {
     "inline-block text-sm rounded-full bg-purple-400 font-semibold uppercase tracking-wide text-slate-900 transition-all duration-300 outline-none hover:bg-purple-300 focus:outline-none focus:ring focus:ring-purple-300 focus:ring-offset-2 ring-offset-slate-200";
 
   const styles = {
-    primary: base + " px-4 py-3 md:px-6 md:py-4 md:text-base",
-    small: base + " text-xs px-3 py-2 md:px-4 md:py-2",
+    primary:
+      base +
+      " px-4 py-3 md:px-6 md:py-4 md:text-base hover:shadow-lg hover:shadow-purple-600/70",
+    small:
+      base + " text-xs px-3 py-2 md:px-4 md:py-2 hover:shadow-custom_shadow_6",
     icon: base + " text-xs px-1 py-1 md:px-2 md:py-2",
     round:
       base + " px-2.5 py-1 md:px-3.5 md:py-1.25 md:px-[.725rem] md:text-base",
     secondary:
-      "inline-block text-sm rounded-full border-2 border-slate-400 px-4 py-2.5 font-semibold uppercase tracking-wide text-slate-400 transition-all duration-300 outline-none ring-offset-slate-200 hover:bg-slate-400 hover:text-slate-800 focus:bg-slate-400 focus:outline-none focus:text-slate-800 focus:ring focus:ring-slate-400 focus:ring-offset-2 md:px-6 md:py-3.5 md:text-base",
+      "inline-block text-sm rounded-full border-2 border-slate-400 px-4 py-2.5 font-semibold uppercase tracking-wide text-slate-400 transition-all duration-300 outline-none ring-offset-slate-200 hover:bg-slate-400 hover:text-slate-800 focus:bg-slate-400 focus:outline-none focus:text-slate-800 focus:ring focus:ring-slate-400 focus:ring-offset-2 md:px-6 md:py-3.5 md:text-base hover:shadow-lg hover:shadow-slate-600/70",
   };
 
   if (to)

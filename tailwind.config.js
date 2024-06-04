@@ -10,6 +10,9 @@ export default {
       height: {
         screen_dyn: "100dvh",
       },
+      boxShadow: {
+        custom_shadow_6: "0 0 6px 0 rgba(192, 132, 252, .8)",
+      },
     },
   },
   plugins: [],
