@@ -26,7 +26,7 @@ function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           className={
-            "inline-block font-semibold text-purple-600 transition-all duration-300 hover:-translate-y-1"
+            "inline-block font-semibold text-purple-600 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-700/80"
           }
         >
           _&#216;k
