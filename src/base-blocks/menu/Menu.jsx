@@ -2,17 +2,21 @@ import { useLoaderData } from "react-router-dom";
 import { getMenu } from "../../services/apiFakePizzaMenu";
 
 import MenuItem from "./MenuItem";
+import ButtonToTop from "../../ui-blocks/ButtonToTop";
 
 function Menu() {
   const menu = useLoaderData();
   // console.log(menu);
 
   return (
-    <ul className="divide-y divide-slate-300 px-3">
-      {menu.map((pizza) => (
-        <MenuItem pizzaObj={pizza} key={pizza.id} />
-      ))}
-    </ul>
+    <>
+      <ul className="divide-y divide-slate-300 px-3">
+        {menu.map((pizza) => (
+          <MenuItem pizzaObj={pizza} key={pizza.id} />
+        ))}
+      </ul>
+      <ButtonToTop />
+    </>
   );
 }
 

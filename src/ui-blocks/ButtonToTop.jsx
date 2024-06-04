@@ -2,8 +2,8 @@ import { IoIosArrowUp } from "react-icons/io";
 
 function ButtonToTop() {
   return (
-    <div className="w42 fixed bottom-5 right-5 h-4 bg-slate-700 p-2">
-      <IoIosArrowUp className="text-slate-200" />
+    <div className="fixed bottom-20 right-10 h-10 w-10 cursor-pointer bg-slate-700 p-2 text-slate-200 transition-all duration-300 hover:bg-slate-400 hover:text-slate-700">
+      <IoIosArrowUp className="text-sm font-bold sm:text-2xl" />
     </div>
   );
 }
