@@ -11,15 +11,25 @@ function Menu() {
   const [isShowToTopBtn, setIsShowToTopBtn] = useState(false);
   const elem = document.querySelector("main");
 
-  useEffect(function () {
-    elem.addEventListener("scroll", function () {
-      if (elem.scrollTop > 100) {
-        setIsShowToTopBtn(true);
-      } else {
-        setIsShowToTopBtn(false);
-      }
-    });
-  });
+  useEffect(
+    function () {
+      elem.addEventListener("scroll", function () {
+        if (elem.scrollTop > 300) {
+          setIsShowToTopBtn(true);
+        } else {
+          setIsShowToTopBtn(false);
+        }
+      });
+      return elem.removeEventListener("scroll", function () {
+        if (elem.scrollTop > 300) {
+          setIsShowToTopBtn(true);
+        } else {
+          setIsShowToTopBtn(false);
+        }
+      });
+    },
+    [setIsShowToTopBtn, elem],
+  );
 
   function returnToTop() {
     elem.scrollTo({ top: 0, behavior: "smooth" });
