@@ -2,6 +2,8 @@ import { useDispatch } from "react-redux";
 import { decreaseItemQuantity, increaseItemQuantity } from "./cartSlice";
 
 import Button from "../../ui-blocks/Button";
+import { RiAddLargeFill } from "react-icons/ri";
+import { IoMdRemove } from "react-icons/io";
 
 import PropTypes from "prop-types";
 
@@ -21,7 +23,7 @@ function CartItemUpdatingQuantity({ pizzaId, currentQuantity }) {
           dispatch(decreaseItemQuantity(pizzaId));
         }}
       >
-        -
+        <IoMdRemove className=" md:text-[10px]" />
       </Button>
       <span className="text-sm font-medium md:text-base">
         {currentQuantity}
@@ -32,7 +34,7 @@ function CartItemUpdatingQuantity({ pizzaId, currentQuantity }) {
           dispatch(increaseItemQuantity(pizzaId));
         }}
       >
-        +
+        <RiAddLargeFill className=" md:text-[10px]" />
       </Button>
     </div>
   );
