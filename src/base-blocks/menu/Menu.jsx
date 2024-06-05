@@ -32,7 +32,7 @@ function Menu() {
           <MenuItem pizzaObj={pizza} key={pizza.id} />
         ))}
       </ul>
-      <ButtonToTop onClick={returnToTop} />
+      {isShowToTopBtn && <ButtonToTop onClick={returnToTop} />}
     </>
   );
 }
