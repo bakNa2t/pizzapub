@@ -14,18 +14,14 @@ function Menu() {
   useEffect(
     function () {
       elem.addEventListener("scroll", function () {
-        if (elem.scrollTop > 300) {
-          setIsShowToTopBtn(true);
-        } else {
-          setIsShowToTopBtn(false);
-        }
+        elem.scrollTop > 300
+          ? setIsShowToTopBtn(true)
+          : setIsShowToTopBtn(false);
       });
       return elem.removeEventListener("scroll", function () {
-        if (elem.scrollTop > 300) {
-          setIsShowToTopBtn(true);
-        } else {
-          setIsShowToTopBtn(false);
-        }
+        elem.scrollTop > 300
+          ? setIsShowToTopBtn(true)
+          : setIsShowToTopBtn(false);
       });
     },
     [setIsShowToTopBtn, elem],
