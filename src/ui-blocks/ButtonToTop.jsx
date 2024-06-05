@@ -1,10 +1,51 @@
+import { useEffect, useState } from "react";
+
 import { IoIosArrowUp } from "react-icons/io";
+
 import PropTypes from "prop-types";
 
 function ButtonToTop({ onClick }) {
   ButtonToTop.propTypes = {
     onClick: PropTypes.func,
   };
+
+  const [isShowToTopBtn, setIsShowToTopBtn] = useState(false);
+
+  useEffect(function () {
+    window.addEventListener("scroll", function () {
+      if (document.documentElement.scrollY > 100) {
+        setIsShowToTopBtn(true);
+      } else {
+        setIsShowToTopBtn(false);
+      }
+    });
+  });
+
+  /*useEffect(function () {
+    const onScroll = () => setScrollTop(window.scrollY);
+    // clean up code
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);*/
+
+  // useEffect(
+  //   function () {
+  //     function handleScroll(e) {
+  //       setScrollTop(e.currentTarget.scrollY);
+  //     }
+
+  //     window.addEventListener("scroll", handleScroll);
+
+  //     console.log(scrollTop);
+  //     return () => {
+  //       window.removeEventListener("scroll", handleScroll);
+  //     };
+  //   },
+  //   [scrollTop],
+  // );
+
+  console.log(isShowToTopBtn);
 
   return (
     <button
