@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { getMenu } from "../../services/apiFakePizzaMenu";
 
 import MenuItem from "./MenuItem";
@@ -6,10 +7,21 @@ import ButtonToTop from "../../ui-blocks/ButtonToTop";
 
 function Menu() {
   const menu = useLoaderData();
-  // console.log(menu);
+
+  const [isShowToTopBtn, setIsShowToTopBtn] = useState(false);
+  const elem = document.querySelector("main");
+
+  useEffect(function () {
+    elem.addEventListener("scroll", function () {
+      if (elem.scrollTop > 100) {
+        setIsShowToTopBtn(true);
+      } else {
+        setIsShowToTopBtn(false);
+      }
+    });
+  });
 
   function returnToTop() {
-    const elem = document.querySelector("main");
     elem.scrollTo({ top: 0, behavior: "smooth" });
   }
 
