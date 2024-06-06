@@ -18,6 +18,7 @@ function Menu() {
           ? setIsShowToTopBtn(true)
           : setIsShowToTopBtn(false);
       });
+
       return elem.removeEventListener("scroll", function () {
         elem.scrollTop > 300
           ? setIsShowToTopBtn(true)

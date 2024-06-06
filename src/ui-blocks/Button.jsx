@@ -23,7 +23,7 @@ function Button({ children, disabled, to, type, onClick }) {
     icon: base + " text-xs px-1 py-1 md:px-2 md:py-2",
     round:
       base +
-      " px-[.475rem] py-[.475rem] md:py-[.625rem] md:px-[.625rem] md:text-base",
+      " px-[.475rem] py-[.475rem] md:py-[.625rem] md:px-[.625rem] md:text-base hover:shadow-md hover:shadow-purple-600/80",
     secondary:
       "inline-block text-sm rounded-full border-2 border-slate-400 px-4 py-2.5 font-semibold uppercase tracking-wide text-slate-400 transition-all duration-300 outline-none ring-offset-slate-200 hover:bg-slate-400 hover:text-slate-800 focus:bg-slate-400 focus:outline-none focus:text-slate-800 focus:ring focus:ring-slate-400 focus:ring-offset-2 md:px-6 md:py-3.5 md:text-base hover:shadow-lg hover:shadow-slate-600/70",
   };
