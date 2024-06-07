@@ -72,7 +72,11 @@ function MainPage() {
       </div>
 
       <p className="my-4 text-center text-xl font-semibold text-purple-500 md:text-2xl">
-        Start your order the best pizza here
+        Start your order the best{" "}
+        <span className="relative mx-1 inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-purple-400">
+          <span className="relative px-1 text-purple-100">pizza</span>
+        </span>{" "}
+        here
       </p>
       {username === "" ? (
         <UserCreating />
