@@ -18,7 +18,7 @@ function Footer() {
   if (window.location.pathname === "/menu") return null;
 
   return (
-    <footer className="absolute bottom-2 left-1/2 -translate-x-1/2 text-slate-500">
+    <footer className="absolute bottom-2 left-1/2 w-[18rem] -translate-x-1/2 text-slate-500 md:w-auto">
       <p className="text-xs">
         &copy; Copyright {fullYear()}. <strong>PizzaPub</strong> designed by{" "}
         <LinkSide
